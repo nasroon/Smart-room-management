@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login V14</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+    <!---------------------------------------------------------------------------->
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <script>
+        var config = {
+            apiKey: "AIzaSyCVviADPQgBhQXHEd1gRib8FJ2estQPuoI",
+            authDomain: "authemticationonweb.firebaseapp.com",
+            projectId: "authemticationonweb",
+            storageBucket: "authemticationonweb.appspot.com",
+            messagingSenderId: "468691965048",
+            appId: "1:468691965048:web:7bfabac118a6812741098d",
+            measurementId: "G-631LNN6KJH"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript">
+        const uiConfig = {
+            signInSuccessUrl: "./Calendar.html",
+            signInOptions: [
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            ],
+        };
+        const ui = new firebaseui.auth.AuthUI(firebase.auth());
+        ui.start("#firebaseui-auth-container", uiConfig);
+    </script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <!------------------------------------------------------>
+                <form class="login100-form validate-form" action="Calendar.html">
+                    <span class="login100-form-title">
+						Account Login
+					</span>
+
+                    <span class="txt1">
+						Username
+					</span>
+                    <div class="wrap-input100 validate-input" data-validate="Username is required">
+                        <input class="input100" type="text" name="username">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <span class="txt1">
+						Password
+					</span>
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <span class="btn-show-pass">
+							<i class="fa fa-eye"></i>
+						</span>
+                        <input class="input100" type="password" name="pass">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" style="margin-top: 17px;">
+							Login
+						</button>
+                        <div id="firebaseui-auth-container"></div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="dropDownSelect1"></div>
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="vendor/countdowntime/countdowntime.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
